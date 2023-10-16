@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\ItemController::class, 'itemView'])->name('home');
+Route::post('/update-items', [App\Http\Controllers\ItemController::class, 'updateItems'])->name('update.items');
